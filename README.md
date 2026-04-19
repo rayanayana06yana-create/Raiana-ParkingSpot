@@ -4,34 +4,74 @@
 * Submission Date: April 2026
 
 
-## Project Overview
-This is my final project for the OOP course. It’s a console app that helps manage parking spots. You can book a spot, see all reservations, update them, or cancel if needed. All data is saved in a text file, so it doesn't disappear when you close the app.
-
 ## Presentation Link
 * You can view my project presentation here: [Presentation](https://canva.link/zmbeu6x6ukt0fy7)
 
+
 ---
 
-## 10 Project Requirements (Checklist)
-1. CRUD: I implemented all four: Create (booking), Read (viewing lists), Update (editing), and Delete (canceling).
-2. CLI: Simple menu with numbers (1-5) to navigate.
-3. Input Validation: The app checks if the email is valid and if the input is empty.
-4. Data Persistence: All data is exported to and imported from reservations.txt.
-5. Modular Design: I split the code into different files like Main, ParkingService, and FileManager.
-6. Documentation: This Readme file explains everything.
-7. Error Handling: Used try-catch so the app won't crash if you enter a letter instead of a number.
-8. Encapsulation: Used private fields with getters and setters.
-9. Inheritance: Customer class extends the User class.
-10. Polymorphism: I used @Override for the displayInfo() method.
+## 1. Project Overview & Purpose
+This is a Java-based Command Line Interface (CLI) application designed to automate the management of parking spaces. It allows administrators to track availability, manage bookings, and ensure data consistency through persistent storage.
 
-## How to Run
-1. Open the project in your IDE (like IntelliJ or VS Code).
-2. Run the Main.java file.
-3. Follow the menu instructions in the console.
+## 2. Objectives
+* **Automation:** To replace manual parking logs with a fast, digital system.
+* **Data Integrity:** To prevent overbooking of spots using real-time validation.
+* **Persistence:** To ensure all records are saved and can be exported for external use.
+* **OOP Practice:** To demonstrate the use of Inheritance, Encapsulation, and Polymorphism in a real-world scenario.
 
-## Screenshots (With Date and Time)
-Below are the screenshots of the app working. You can see the system date and time in the corner as required.
+---
 
-![Main Menu](screen1.png)
-![Booking a spot](screen2.png)
-![Error message example](screen3.png)
+## 3. Project Requirement List (10 Key Requirements)
+1.  **Full CRUD:** Users can Create, Read, Update, and Delete reservations.
+2.  **CLI Navigation:** Interactive menu-driven interface for easy use.
+3.  **Input Validation:** System checks for valid emails (Regex) and prevents empty inputs.
+4.  **Data Import:** Functionality to load data from `reservations.txt` on startup.
+5.  **Data Export:** Functionality to export records to a standard **CSV format**.
+6.  **Error Handling:** Use of `try-catch` to prevent crashes from invalid numeric inputs.
+7.  **Encapsulation:** All data fields are `private` with public `getters/setters`.
+8.  **Inheritance:** `Customer` class inherits from `User` to reuse core attributes.
+9.  **Polymorphism:** Overriding the `displayInfo()` method to show specific data.
+10. **Persistence:** Use of File I/O to store and retrieve data.
+
+---
+
+## 4. Documentation
+
+### Algorithms and Data Structures
+* **ArrayList:** Used for dynamic storage of Reservation objects in memory.
+* **Synchronization Algorithm:** On startup, the system parses the CSV file and maps the status of each `ParkingSpot` (Occupied/Available) based on existing reservations.
+* **Input Validation Logic:** A loop-based algorithm that re-prompts the user if an invalid data type is entered.
+
+### Modules
+* **Main:** Handles the user interface and menu logic.
+* **ParkingService:** Contains business logic (CRUD operations).
+* **FileManager:** Dedicated module for CSV Import/Export.
+* **Models:** Classes representing `User`, `Customer`, `Spot`, and `Reservation`.
+
+### Challenges Faced
+* **Buffer Sync:** Managing the `Scanner` buffer when switching from `nextInt()` to `nextLine()`.
+* **Data Integrity:** Ensuring that deleting a reservation correctly frees up the linked `ParkingSpot` object in the system.
+
+---
+
+## 5. Test Cases and Outputs
+
+| Input Action | Sample Input | Expected Output | Status |
+| :--- | :--- | :--- | :--- |
+| **Add Booking** | email@test.com, Spot 5 | "Reservation successful! Spot 5 is now occupied." | Validated |
+| **Invalid Input** | "abc" instead of Spot ID | "Error! Please enter a number." | Validated |
+| **Export Data** | Select Option 6 | "Data exported to export.csv successfully!" | Validated |
+
+---
+
+## 6. Verification Screenshots
+*Note: All screenshots include the system date and time as required.*
+
+![Main Menu and Loading](screen1.png)
+*Requirement: CLI Navigation & Data Import*
+
+![Booking and Validation](screen2.png)
+*Requirement: CRUD (Create) & Input Validation*
+
+![Export and CSV File](screen3.png)
+*Requirement: Data Export (CSV) & File Persistence*
