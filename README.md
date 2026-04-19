@@ -58,7 +58,7 @@ This is a Java-based Command Line Interface (CLI) application designed to automa
 
 | Input Action | Sample Input | Expected Output | Status |
 | :--- | :--- | :--- | :--- |
-| **Add Booking** | email@test.com, Spot 5 | "Reservation successful! Spot 5 is now occupied." | Validated |
+| **Add Booking** | email@test.com, Spot 5 | "Reservation successful!" | Validated |
 | **Invalid Input** | "abc" instead of Spot ID | "Error! Please enter a number." | Validated |
 | **Export Data** | Select Option 6 | "Data exported to export.csv successfully!" | Validated |
 
