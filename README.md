@@ -68,10 +68,7 @@ This is a Java-based Command Line Interface (CLI) application designed to automa
 *Note: All screenshots include the system date and time as required.*
 
 ![Main Menu and Loading](screen1.png)
-*Requirement: CLI Navigation & Data Import*
 
 ![Booking and Validation](screen2.png)
-*Requirement: CRUD (Create) & Input Validation*
 
 ![Export and CSV File](screen3.png)
-*Requirement: Data Export (CSV) & File Persistence*
