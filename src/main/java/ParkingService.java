@@ -2,6 +2,13 @@ import java.util.*;
 
 public class ParkingService {
 
+    public List<Reservation> getReservationsList() {
+        return this.reservations;
+    }
+
+    public void setReservationsList(List<Reservation> newList) {
+        this.reservations = newList;
+    }
     // List of parking spots
     private List<ParkingSpot> spots = new ArrayList<>();
 
@@ -12,7 +19,7 @@ public class ParkingService {
     public ParkingService() {
 
         // Create default parking spots
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 10; i++) {
             spots.add(new ParkingSpot(i, true));
         }
 

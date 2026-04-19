@@ -16,7 +16,9 @@ public class Main {
             System.out.println("3. View Reservations");
             System.out.println("4. Cancel Reservation");
             System.out.println("5. Update Reservation");
-            System.out.println("6. Exit");
+            System.out.println("6. Export to CSV");
+            System.out.println("7. Import from CSV");
+            System.out.println("8. Exit");
             System.out.println("\nYour choice: ");
 
 
@@ -54,6 +56,16 @@ public class Main {
                     break;
 
                 case 6:
+                    FileManager.exportToCSV(service.getReservationsList());
+                    System.out.println("Data exported to export.csv successfully!");
+                    break;
+
+                case 7:
+                    service.setReservationsList(FileManager.importFromCSV());
+                    System.out.println("Data imported from export.csv successfully!");
+                    break;
+
+                case 8:
                     System.out.println("Goodbye!");
                     return;
 
